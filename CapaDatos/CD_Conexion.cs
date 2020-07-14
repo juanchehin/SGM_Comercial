@@ -10,8 +10,8 @@ namespace CapaDatos
 {
     public class CD_Conexion
     {
-        MySqlConnection Con = new MySqlConnection("datasource = localhost;username = root;password = '';database=sgm");
-
+        MySqlConnection Con = new MySqlConnection("datasource = localhost;username = root;password = 'Sgm@S123';database=sgm");
+        
         public CD_Conexion()
         {
             AbrirConexion();

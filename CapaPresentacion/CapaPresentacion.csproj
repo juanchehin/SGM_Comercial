@@ -27,7 +27,7 @@
     <ProductName>SGM</ProductName>
     <PublisherName>SGM</PublisherName>
     <SuiteName>SGM</SuiteName>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -65,8 +65,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>SGM_LOGO.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -399,6 +398,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SGM_LOGO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SGM_LOGO.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

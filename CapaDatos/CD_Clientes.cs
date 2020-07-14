@@ -66,7 +66,7 @@ namespace CapaDatos
         // devuelve solo 1 cliente de la BD
         public DataTable MostrarCliente(int IdCliente)
         {
-            Console.WriteLine("IdCliente en capa datos es : " + IdCliente);
+            //Console.WriteLine("IdCliente en capa datos es : " + IdCliente);
             comando.Connection = conexion.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "bsp_dame_cliente";
@@ -90,7 +90,7 @@ namespace CapaDatos
 
         public string Editar(CD_Clientes Cliente)
         {
-            Console.WriteLine("Cliente.IdCliente es 1 : " + Cliente.IdCliente);
+            // Console.WriteLine("Cliente.IdCliente es 1 : " + Cliente.IdCliente);
             string rpta = "";
             comando.Parameters.Clear();// si no ponerlo al comienzo de esta funcion
             try
@@ -251,8 +251,8 @@ namespace CapaDatos
 
                 leer = comando.ExecuteReader();
                 tabla.Load(leer);
-                Console.WriteLine("tabla en capa datos es : " + tabla);
-                Console.WriteLine("leer en capa datos es : " + leer.ToString());
+                // Console.WriteLine("tabla en capa datos es : " + tabla);
+                // Console.WriteLine("leer en capa datos es : " + leer.ToString());
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
 
@@ -260,8 +260,8 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Entro en el catch y tabla es en capa datos" + tabla);
-                Console.WriteLine("Entro en el catch y ex es en capa datos" + ex.Message);
+                //Console.WriteLine("Entro en el catch y tabla es en capa datos" + tabla);
+                //Console.WriteLine("Entro en el catch y ex es en capa datos" + ex.Message);
 
                 tabla = null;
             }
