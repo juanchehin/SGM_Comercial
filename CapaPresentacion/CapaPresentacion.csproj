@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E39A7657-35A0-4698-9048-FD8C96E2C3A2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CapaPresentacion</RootNamespace>
+    <AssemblyName>CapaPresentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Trabajos\SGM\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>https://juanchehin.github.io/CR/</SupportUrl>
+    <ProductName>SGM</ProductName>
+    <PublisherName>SGM</PublisherName>
+    <SuiteName>SGM</SuiteName>
+    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>767896F86F8A991D324EDF6ED4884185E18D7CE9</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CapaPresentacion_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="formAgregarTrabajoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAgregarTrabajoEmpleado.Designer.cs">
+      <DependentUpon>formAgregarTrabajoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formClientes.Designer.cs">
+      <DependentUpon>formClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCompras.Designer.cs">
+      <DependentUpon>formCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formEmpleados.Designer.cs">
+      <DependentUpon>formEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formInformacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formInformacion.Designer.cs">
+      <DependentUpon>formInformacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevoEditarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarClientes.Designer.cs">
+      <DependentUpon>formNuevoEditarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevoEditarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarCompra.Designer.cs">
+      <DependentUpon>formNuevoEditarCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevoEditarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarEmpleado.Designer.cs">
+      <DependentUpon>formNuevoEditarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevoEditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarProducto.Designer.cs">
+      <DependentUpon>formNuevoEditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevoEditarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarProveedor.Designer.cs">
+      <DependentUpon>formNuevoEditarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevoEditarTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarTrabajo.Designer.cs">
+      <DependentUpon>formNuevoEditarTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevoEditarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarVenta.Designer.cs">
+      <DependentUpon>formNuevoEditarVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formProductos.Designer.cs">
+      <DependentUpon>formProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formProveedores.Designer.cs">
+      <DependentUpon>formProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSplashScreen.Designer.cs">
+      <DependentUpon>formSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formTrabajos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formTrabajos.Designer.cs">
+      <DependentUpon>formTrabajos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formTrabajosEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formTrabajosEmpleado.Designer.cs">
+      <DependentUpon>formTrabajosEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formVentas.Designer.cs">
+      <DependentUpon>formVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formAgregarTrabajoEmpleado.resx">
+      <DependentUpon>formAgregarTrabajoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formClientes.resx">
+      <DependentUpon>formClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formCompras.resx">
+      <DependentUpon>formCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formEmpleados.resx">
+      <DependentUpon>formEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formInformacion.resx">
+      <DependentUpon>formInformacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarClientes.resx">
+      <DependentUpon>formNuevoEditarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarCompra.resx">
+      <DependentUpon>formNuevoEditarCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarEmpleado.resx">
+      <DependentUpon>formNuevoEditarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarProducto.resx">
+      <DependentUpon>formNuevoEditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarProveedor.resx">
+      <DependentUpon>formNuevoEditarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarTrabajo.resx">
+      <DependentUpon>formNuevoEditarTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarVenta.resx">
+      <DependentUpon>formNuevoEditarVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formProductos.resx">
+      <DependentUpon>formProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formProveedores.resx">
+      <DependentUpon>formProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formSplashScreen.resx">
+      <DependentUpon>formSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formTrabajos.resx">
+      <DependentUpon>formTrabajos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formTrabajosEmpleado.resx">
+      <DependentUpon>formTrabajosEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formVentas.resx">
+      <DependentUpon>formVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Resources\Report1.rdlc" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{cf81d933-3e07-4f19-a056-9eb467492bfe}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empleado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empleado1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\team.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\team1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\labour.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB_IMG_1576455035187%282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-Pelado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoCR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searching-magnifying-glass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printPreview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SGM_LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SGM_LOGO_pequeño2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SGM_LOGO.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
