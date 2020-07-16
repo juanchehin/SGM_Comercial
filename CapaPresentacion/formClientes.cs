@@ -141,7 +141,7 @@ namespace CapaPresentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-            this.Close();
+            // this.Close();
         }
 
         private void txtBuscar_KeyDown(object sender, KeyEventArgs e)

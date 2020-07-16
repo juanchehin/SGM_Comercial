@@ -21,6 +21,7 @@ namespace CapaPresentacion
         private int parametroTE;    // IdEmpleado
         private int total = 0;
         private int banderaLocal;
+        private int banderaLocal2 = 0;
         CN_TrabajosEmpleado objetoCN = new CN_TrabajosEmpleado();
         CN_Empleados objetoCN_emp = new CN_Empleados();
         private DateTime FechaFin = DateTime.Today; // Fecha actual
@@ -55,9 +56,10 @@ namespace CapaPresentacion
         private void MostrarTrabajosEmpleado(int IdEmpleado, DateTime FechaInicio,DateTime FechaFin)
         {
             this.total = 0;
-            Console.WriteLine("Ingreso a MostrarTrabajosEmpleado ");
-            Console.WriteLine("IdEMplreado " + IdEmpleado);
-            Console.WriteLine("Ingreso a MostrarTrabajosEmpleado FechaInicio " + FechaInicio);
+            // this.banderaLocal2 = 0;
+            // Console.WriteLine("Ingreso a MostrarTrabajosEmpleado ");
+            // Console.WriteLine("IdEMplreado " + IdEmpleado);
+            Console.WriteLine("Ingreso a MostrarTrabajosEmpleado FechaInicio ");
             var añoInicio = FechaInicio.Year;
             var mesInicio = FechaInicio.Month;
             var diaInicio = FechaInicio.Day;
@@ -72,47 +74,55 @@ namespace CapaPresentacion
 
 
             dataListadoTrabajosEmpleado.DataSource = objetoCN.MostrarTrabajosEmpleado(IdEmpleado, fechaInicio, fechaFin);
-            Console.WriteLine("dataListadoTrabajosEmpleado cant columnas : " + dataListadoTrabajosEmpleado.ColumnCount);
-            Console.WriteLine("dataListadoTrabajosEmpleado cant filas : " + dataListadoTrabajosEmpleado.Rows.Count);
-            if (dataListadoTrabajosEmpleado.DataSource == null)
+            Console.WriteLine("dataListadoTrabajosEmpleado cant columnas : ");
+            // Console.WriteLine("dataListadoTrabajosEmpleado cant filas : " + dataListadoTrabajosEmpleado.Rows.Count);
+            /*if (dataListadoTrabajosEmpleado.DataSource == null)
             {
+                // this.Close();
                 MensajeError("El empleado no posee trabajos");
-                this.Close();
+                Console.WriteLine("Antes del RETURN : ");
+                this.banderaLocal2 = 1;
                 return;
-            }
-
+                Console.WriteLine("Despues del RETURN ");
+            }*/
+            Console.WriteLine("CONTINUA HASTA AQUI : ");
 
             // Seteo estos valores para usarlo mas abajo en metodo DVPrintDocument_PrintPage
             this.imprimirFechaInicio = fechaInicio;
             this.imprimirFechaFin = fechaFin;
 
-            if (dataListadoTrabajosEmpleado.RowCount <= 0 && this.banderaLocal == 0)
+            /*if (dataListadoTrabajosEmpleado.RowCount <= 0 && this.banderaLocal == 0)
             {
                 dataListadoTrabajosEmpleado.DataSource = null;
                 MensajeOk("El empleado no posee trabajos en este rango de fechas");
                 // this.banderaLocal = 1;
                 return;
-            }
+            }*/
             // this.banderaLocal = 1;
             // Multiplico cantidad * PrecioUnitario para obtener el total de i-esima fila
             
             foreach (DataGridViewRow row in dataListadoTrabajosEmpleado.Rows)
             {
-
-
                 row.Cells[0].Value = Convert.ToInt32(row.Cells[6].Value) * Convert.ToInt32(row.Cells[7].Value);
                 this.total = this.total + Convert.ToInt32(row.Cells[0].Value);
+            }
+            DataTable empleado = objetoCN_emp.MostrarEmpleado(IdEmpleado);
+            lblApellidoNombre.Text = empleado.Rows[0][2].ToString() + " , " + empleado.Rows[0][2].ToString();
+            lblDireccion.Text = empleado.Rows[0][4].ToString();
+            lblTelefono.Text = empleado.Rows[0][5].ToString();
+
+            if (this.total == 0)
+            {
+                Console.WriteLine("Entro en el IF");
+                return;
             }
 
             dataListadoTrabajosEmpleado.Columns["Total"].DisplayIndex = 7;  // Muevo la columna a la posicion de mas a la derecha
             // Oculto el IdProducto al usuario. Lo puedo seguir usando como parametro de eliminacion
             // Console.WriteLine("dataListadoTrabajosEmpleado.Rows[0] " + dataListadoTrabajosEmpleado.Rows[0].Cells[2].Value.ToString());
-            DataTable empleado = objetoCN_emp.MostrarEmpleado(IdEmpleado);
-            lblApellidoNombre.Text = empleado.Rows[0][2].ToString() + " , " + empleado.Rows[0][2].ToString();
-            lblDireccion.Text = empleado.Rows[0][4].ToString();
-            lblTelefono.Text = empleado.Rows[0][5].ToString();
-            Console.WriteLine("lblApellidoNombre " + lblApellidoNombre.Text);
-            Console.WriteLine("lblDireccion.Text " + lblDireccion.Text);
+            
+            // Console.WriteLine("lblApellidoNombre " + lblApellidoNombre.Text);
+            // Console.WriteLine("lblDireccion.Text " + lblDireccion.Text);
             /*lblApellidoNombre.Text = dataListadoTrabajosEmpleado.Rows[0].Cells[2].Value.ToString() + " , " + dataListadoTrabajosEmpleado.Rows[0].Cells[1].Value.ToString();
             lblDireccion.Text = dataListadoTrabajosEmpleado.Rows[0].Cells[3].Value.ToString();
             lblTelefono.Text = dataListadoTrabajosEmpleado.Rows[0].Cells[4].Value.ToString();
@@ -124,19 +134,20 @@ namespace CapaPresentacion
 
             // Nota : Nombre es row.Cells[1].Value
             this.lblTotal.Text = this.total.ToString();
+            return;
         }
-
+        // Console.WriteLine("CONTINUA HASTA AQUI 2 ");
         private void Refrescar(object sender, EventArgs e)
         {
+            Console.WriteLine("CONTINUA HASTA AQUI 2 " + this.banderaLocal2);
             this.FechaInicio = dtFechaInicio.Value;
             this.FechaFin = dtFechaFin.Value;
             this.banderaLocal = 0;
             MostrarTrabajosEmpleado(this.parametroTE, this.FechaInicio,this.FechaFin);
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
-    {
+        {
         try
         {
             DialogResult Opcion;

@@ -256,9 +256,9 @@
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.Location = new System.Drawing.Point(733, 511);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(67, 17);
+            this.lblTotal.Size = new System.Drawing.Size(16, 17);
             this.lblTotal.TabIndex = 24;
-            this.lblTotal.Text = "resultado";
+            this.lblTotal.Text = "0";
             // 
             // lblSubTotal
             // 

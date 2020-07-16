@@ -93,7 +93,7 @@ namespace CapaPresentacion
             formNuevoEditarEmpleado frm = new formNuevoEditarEmpleado(this.IdEmpleado, true);
             frm.MdiParent = this.MdiParent;
             frm.Show();
-            this.Close();
+            // this.Close();
         }
 
         private void botonEditarListado_Click(object sender, EventArgs e)
@@ -152,6 +152,7 @@ namespace CapaPresentacion
 
         private void agregarTrabajo(int IdEmpleado)
         {
+            Console.WriteLine("Entro en agregarTrabajo");
             formAgregarTrabajoEmpleado frm = new formAgregarTrabajoEmpleado(this.IdEmpleado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
